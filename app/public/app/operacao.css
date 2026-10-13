@@ -1,0 +1,1171 @@
+/* Oficina: visões operação e manutenção. Escopo #app, classes .app-op-*. */
+
+#app .app-op {
+  --app-op-paper: #f8f5e4;
+  --app-op-line: #233175;
+  --app-op-muted: #4a5590;
+  --app-op-gap: 1rem;
+  --app-op-hatch: repeating-linear-gradient(-45deg, var(--yellow-bright) 0 6px, var(--yellow) 6px 12px);
+  color-scheme: light;
+  color: var(--blue);
+  background: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 1.25rem 1rem 3rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+#app .app-op *,
+#app .app-op *::before,
+#app .app-op *::after {
+  box-sizing: border-box;
+}
+
+#app .app-op a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+#app .app-op a:hover {
+  color: var(--blue-bright);
+}
+
+#app .app-op :focus-visible {
+  outline: 3px solid var(--blue-bright);
+  outline-offset: 3px;
+}
+
+#app .app-op svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+#app .app-op h2,
+#app .app-op h3,
+#app .app-op h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+#app .app-op-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+#app .app-op-head {
+  display: grid;
+  gap: 0.45rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--blue);
+}
+
+#app .app-op-head__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+}
+
+#app .app-op-head__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#app .app-op-mark-star {
+  flex: none;
+  color: var(--blue);
+}
+
+#app .app-op-mark-star path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 12;
+}
+
+#app .app-op-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+#app .app-op-view-switch {
+  display: inline-flex;
+  border: 2px solid var(--blue);
+}
+
+#app .app-op-view-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.35rem 0.8rem;
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+#app .app-op-view-switch a + a {
+  border-left: 1px solid var(--blue);
+}
+
+#app .app-op-view-switch a[aria-current="page"] {
+  color: var(--cream);
+  background: var(--blue);
+  box-shadow: inset 0 -4px 0 var(--yellow-bright);
+}
+
+#app .app-op-meta {
+  justify-self: start;
+  max-width: 100%;
+  border: 1px solid var(--blue);
+  background: var(--app-op-paper);
+  font-size: 0.82rem;
+}
+
+#app .app-op-meta > summary {
+  min-height: 2rem;
+  padding: 0.3rem 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#app .app-op-meta dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin: 0;
+  padding: 0.2rem 0.65rem 0.55rem;
+}
+
+#app .app-op-meta dt {
+  color: var(--app-op-muted);
+}
+
+#app .app-op-meta dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+#app .app-op-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+}
+
+#app .app-op-head-newtab {
+  min-height: 2rem;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+#app .app-op-pending {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--blue);
+  border-left-width: 10px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+#app .app-op-pending[hidden] {
+  display: none;
+}
+
+#app .app-op-topmsg:empty {
+  display: none;
+}
+
+/* ---------- Botões e links ---------- */
+
+#app .app-op-btn,
+#app .app-op a.app-op-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  border: 2px solid var(--blue);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+}
+
+#app .app-op-btn--primary {
+  color: var(--cream);
+  background: var(--blue);
+}
+
+#app .app-op-btn--primary:hover:not(:disabled) {
+  background: var(--blue-deep);
+}
+
+#app .app-op-btn--ghost,
+#app .app-op a.app-op-link-btn {
+  color: var(--blue);
+  background: transparent;
+}
+
+#app .app-op-btn--ghost:hover:not(:disabled),
+#app .app-op a.app-op-link-btn:hover {
+  color: var(--cream);
+  background: var(--blue);
+}
+
+#app .app-op-btn--next {
+  width: 100%;
+  min-height: 3.25rem;
+  font-size: 1.1rem;
+  color: var(--blue);
+  background: var(--yellow-bright);
+  border-width: 3px;
+}
+
+#app .app-op-btn--next:hover:not(:disabled) {
+  background: var(--yellow);
+}
+
+#app .app-op-btn:disabled {
+  cursor: progress;
+  opacity: 0.7;
+  background-image: repeating-linear-gradient(-45deg, transparent 0 6px, rgb(35 49 117 / 14%) 6px 12px);
+}
+
+#app .app-op-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* ---------- Seções ---------- */
+
+#app .app-op-section {
+  margin-top: 1.25rem;
+}
+
+#app .app-op-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  line-height: 1.1;
+  padding-left: 0.75rem;
+  border-left: 10px solid var(--yellow-bright);
+}
+
+#app .app-op-lead {
+  margin: 0.4rem 0 0.7rem;
+  max-width: 70ch;
+}
+
+#app .app-op-count {
+  margin: 0.35rem 0 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--app-op-muted);
+}
+
+#app .app-op-form-details {
+  min-width: 0;
+  border: 1px solid var(--blue);
+  background: var(--app-op-paper);
+}
+
+#app .app-op-form-details > summary {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#app .app-op-form-details[open] > summary {
+  border-bottom: 1px solid var(--blue);
+  background: var(--yellow-bright);
+  color: var(--ink);
+}
+
+#app .app-op-form-details > fieldset {
+  margin: 0.65rem;
+  padding: 0.7rem;
+}
+
+#app .app-op-hint {
+  margin: 0.3rem 0 0;
+  font-size: 0.875rem;
+  color: var(--app-op-muted);
+  max-width: 70ch;
+}
+
+#app .app-op-req {
+  margin-left: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--app-op-muted);
+}
+
+/* ---------- Mensagens ---------- */
+
+#app .app-op-msg {
+  margin: 0.5rem 0 0;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid var(--blue);
+  border-left-width: 10px;
+  max-width: 70ch;
+}
+
+#app .app-op-msg--error {
+  background: var(--yellow-bright);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+#app .app-op-msg--ok {
+  background: var(--blue-deep);
+  color: var(--cream);
+  border-color: var(--blue-deep);
+}
+
+/* ---------- Formulário ---------- */
+
+#app .app-op-formgrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+#app .app-op-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 2px solid var(--blue);
+  background: var(--app-op-paper);
+}
+
+#app .app-op-fieldset--inner {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-style: dashed;
+}
+
+#app .app-op-fieldset > legend {
+  padding: 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+}
+
+#app .app-op-fieldset--inner > legend {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#app .app-op-field {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 0.9rem;
+}
+
+#app .app-op-field:last-child {
+  margin-bottom: 0;
+}
+
+#app .app-op-field label {
+  font-weight: 700;
+}
+
+#app .app-op input[type="text"],
+#app .app-op select,
+#app .app-op textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.65rem;
+  border: 2px solid var(--blue);
+  border-radius: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+#app .app-op textarea {
+  resize: vertical;
+}
+
+#app .app-op [aria-invalid="true"] {
+  border-width: 4px;
+  background: var(--yellow-bright);
+}
+
+#app .app-op-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#app .app-op-radio {
+  position: relative;
+  display: inline-flex;
+}
+
+#app .app-op-radio input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#app .app-op-radio span {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--blue);
+  background: #fff;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+#app .app-op-radio input:checked + span {
+  color: var(--cream);
+  background: var(--blue);
+  box-shadow: inset 0 -6px 0 var(--yellow-bright);
+}
+
+#app .app-op-radio input:focus-visible + span {
+  outline: 3px solid var(--blue-bright);
+  outline-offset: 3px;
+}
+
+#app .app-op-submitrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+#app .app-op-formmsg {
+  flex: 1 1 18rem;
+}
+
+#app .app-op-formmsg .app-op-msg {
+  margin-top: 0;
+}
+
+/* ---------- Selo Simulação ---------- */
+
+#app .app-op-seal {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  background: var(--app-op-hatch);
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+#app .app-op-tag {
+  display: inline-flex;
+  padding: 0.1rem 0.5rem;
+  border: 2px solid var(--blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+#app .app-op-asset {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.5rem;
+}
+
+#app .app-op-asset__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+#app .app-op-asset__nature {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--app-op-muted);
+}
+
+/* ---------- Indicador de etapa ---------- */
+
+#app .app-op-meter {
+  display: flex;
+  gap: 3px;
+  max-width: 18rem;
+}
+
+#app .app-op-meter__b {
+  flex: 1;
+  height: 0.75rem;
+  border: 2px solid var(--blue);
+  background: transparent;
+}
+
+#app .app-op-meter__b--on {
+  background: var(--blue);
+}
+
+/* ---------- Fila e cartões ---------- */
+
+#app .app-op-queue,
+#app .app-op-mine-list {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#app .app-op-card {
+  position: relative;
+  padding: 8px 0 0;
+  border: 3px solid var(--blue);
+  border-left-width: 14px;
+  background: var(--app-op-paper);
+}
+
+#app .app-op-card__disclosure { margin: 0; padding: 0; border: 0; border-radius: 0; }
+
+#app .app-op-card__summary {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  gap: 0.65rem 0.85rem;
+  padding: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+#app .app-op-card__summary::-webkit-details-marker { display: none; }
+#app .app-op-card__summary:hover { background: var(--cream); }
+#app .app-op-card__summary:focus-visible { outline: 3px solid var(--blue); outline-offset: -4px; }
+#app .app-op-card__position { display: grid; align-content: start; gap: 0.25rem; text-align: center; }
+#app .app-op-card__position strong { font-family: var(--font-display); font-size: 2.25rem; line-height: 1; }
+#app .app-op-card__position > span { font-size: 0.65rem; font-weight: 700; white-space: nowrap; }
+#app .app-op-card__overview,
+#app .app-op-card__status { display: grid; align-content: start; min-width: 0; gap: 0.35rem; }
+#app .app-op-card__equipment { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.25; overflow-wrap: anywhere; }
+#app .app-op-card__preview { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; line-height: 1.4; }
+#app .app-op-card__priority { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.65rem; font-size: 0.8rem; }
+#app .app-op-card__safety { font-weight: 800; }
+#app .app-op-card--s3 .app-op-card__safety,
+#app .app-op-mine--s3 .app-op-card__safety { color: var(--cream); background: var(--ink); padding: 0.2rem 0.4rem; }
+#app .app-op-card__status { grid-column: 2; font-size: 0.8rem; line-height: 1.4; }
+#app .app-op-card__toggle { grid-column: 2; display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 800; min-height: 1.5rem; }
+#app .app-op-card__chevron { width: 0.5rem; height: 0.5rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); }
+#app .app-op-card__collapse { display: none; }
+#app .app-op-card__disclosure[open] > summary .app-op-card__expand { display: none; }
+#app .app-op-card__disclosure[open] > summary .app-op-card__collapse { display: inline; }
+#app .app-op-card__disclosure[open] > summary .app-op-card__chevron { transform: rotate(225deg); }
+#app .app-op-card__body { display: grid; gap: 1rem; padding: 1rem; border-top: 1px solid var(--blue); }
+
+#app .app-op-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  background: var(--app-op-hatch);
+  border-bottom: 2px solid var(--ink);
+}
+
+#app .app-op-card--s3 {
+  border-color: var(--ink);
+  border-left-width: 22px;
+}
+
+#app .app-op-card--s2 {
+  border-left-width: 18px;
+  border-color: var(--blue-deep);
+}
+
+#app .app-op-card--su {
+  border-left-style: dashed;
+  border-left-width: 14px;
+}
+
+#app .app-op-card--s0 {
+  border-left-width: 6px;
+}
+
+#app .app-op-card--closed {
+  background: var(--cream);
+  border-style: solid dashed solid solid;
+}
+
+#app .app-op-card--recalc {
+  outline: 4px solid var(--yellow-bright);
+  outline-offset: 2px;
+}
+
+#app .app-op-card__rank {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+#app .app-op-card__pos {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 14vw, 6rem);
+  line-height: 0.9;
+}
+
+#app .app-op-card__poslabel {
+  font-weight: 700;
+}
+
+#app .app-op-card__main,
+#app .app-op-card__side,
+#app .app-op-card__wide {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  min-width: 0;
+}
+
+#app .app-op-card__line,
+#app .app-op-mine__line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.8rem;
+  margin: 0 0 0.4rem;
+}
+
+#app .app-op-card__title,
+#app .app-op-mine__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  line-height: 1.1;
+}
+
+#app .app-op-card__symptom,
+#app .app-op-mine__symptom {
+  margin: 0.4rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+#app .app-op-card__who {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  color: var(--app-op-muted);
+}
+
+#app .app-op-linked {
+  margin: 0.5rem 0 0;
+  padding: 0.4rem 0.6rem;
+  border: 2px dotted var(--blue);
+  font-size: 0.9rem;
+}
+
+/* ---------- Prioridade ---------- */
+
+#app .app-op-prio {
+  padding: 0.65rem;
+  border: 2px solid var(--blue);
+  background: var(--cream);
+}
+
+#app .app-op-prio p {
+  margin: 0 0 0.5rem;
+}
+
+#app .app-op-prio__head {
+  font-size: 0.98rem;
+}
+
+#app .app-op-prio > .app-op-details {
+  margin-top: 0.55rem;
+}
+
+#app .app-op-prio__details-body > * {
+  margin: 0.6rem;
+}
+
+#app .app-op-prio__server {
+  font-size: 0.85rem;
+  color: var(--app-op-muted);
+}
+
+#app .app-op-prio__grave,
+#app .app-op-prio__triage {
+  padding: 0.4rem 0.6rem;
+  font-weight: 800;
+  color: var(--cream);
+  background: var(--ink);
+}
+
+#app .app-op-prio__triage {
+  color: var(--ink);
+  background: var(--yellow-bright);
+  border: 2px dashed var(--ink);
+}
+
+#app .app-op-prio__why {
+  font-weight: 600;
+  max-width: 70ch;
+}
+
+#app .app-op-prio__table {
+  width: 100%;
+  margin: 0.25rem 0 0.6rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+#app .app-op-prio__table th,
+#app .app-op-prio__table td {
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid var(--blue);
+  text-align: right;
+  vertical-align: top;
+}
+
+#app .app-op-prio__table th:first-child,
+#app .app-op-prio__table thead th:first-child {
+  text-align: left;
+}
+
+#app .app-op-prio__table thead th {
+  border-bottom-width: 2px;
+  font-size: 0.8rem;
+}
+
+#app .app-op-prio__unknown {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline dotted;
+}
+
+#app .app-op-recalc {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.7rem;
+  border-left: 10px solid var(--yellow-bright);
+  color: var(--cream);
+  background: var(--blue-deep);
+  font-weight: 700;
+}
+
+/* ---------- Etapa e ação ---------- */
+
+#app .app-op-stage {
+  display: grid;
+  gap: 0.4rem;
+}
+
+#app .app-op-stage p {
+  margin: 0;
+}
+
+#app .app-op-stage__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+#app .app-op-stage__wait {
+  font-weight: 700;
+}
+
+#app .app-op-saved {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+#app .app-op-saved dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--app-op-muted);
+}
+
+#app .app-op-saved dd {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+#app .app-op-act {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.9rem;
+  border: 3px solid var(--blue);
+  background: #fff;
+}
+
+#app .app-op-act__title {
+  margin: 0;
+  font-weight: 800;
+}
+
+#app .app-op-act .app-op-field {
+  margin-bottom: 0;
+}
+
+#app .app-op-act .app-op-msg {
+  margin-top: 0;
+}
+
+#app .app-op-done {
+  margin: 0;
+  padding: 0.7rem;
+  border: 2px dashed var(--blue);
+  font-weight: 700;
+}
+
+/* ---------- Marcos ---------- */
+
+#app .app-op-marks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#app .app-op-mark {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "dot label"
+    ". time";
+  column-gap: 0.5rem;
+  align-items: start;
+  font-size: 0.875rem;
+}
+
+#app .app-op-mark__dot {
+  grid-area: dot;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  border: 2px dashed var(--blue);
+  border-radius: 50%;
+}
+
+#app .app-op-mark--done .app-op-mark__dot {
+  border-style: solid;
+  background: var(--blue);
+}
+
+#app .app-op-mark__label {
+  grid-area: label;
+  font-weight: 800;
+}
+
+#app .app-op-mark__time {
+  grid-area: time;
+}
+
+#app .app-op-mark:not(.app-op-mark--done) .app-op-mark__time {
+  color: var(--app-op-muted);
+  font-style: italic;
+}
+
+/* ---------- Detalhes ---------- */
+
+#app .app-op-card__extras {
+  display: grid;
+  gap: 0.6rem;
+}
+
+#app .app-op-details,
+#app .app-op-closed {
+  border: 2px solid var(--blue);
+  background: #fff;
+}
+
+#app .app-op-details > summary,
+#app .app-op-closed > summary {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#app .app-op-details[open] > summary,
+#app .app-op-closed[open] > summary {
+  border-bottom: 2px solid var(--blue);
+  background: var(--yellow-bright);
+  color: var(--ink);
+}
+
+#app .app-op-closed {
+  margin-top: 2rem;
+  background: var(--app-op-paper);
+}
+
+#app .app-op-closed > summary {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+#app .app-op-closed > .app-op-queue {
+  padding: 1rem;
+}
+
+#app .app-op-details > :not(summary) {
+  margin: 0.75rem;
+}
+
+#app .app-op-events,
+#app .app-op-qlist {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+#app .app-op-qlist {
+  padding-left: 1.25rem;
+  list-style: square;
+}
+
+#app .app-op-event {
+  display: grid;
+  gap: 0.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--blue);
+  font-size: 0.9rem;
+}
+
+#app .app-op-event__time {
+  font-weight: 800;
+}
+
+#app .app-op-reassess {
+  display: grid;
+  gap: 0.75rem;
+}
+
+#app .app-op-reassess__grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+#app .app-op-reassess .app-op-field {
+  margin-bottom: 0;
+}
+
+/* ---------- Meus chamados ---------- */
+
+#app .app-op-mine {
+  padding: 0;
+  border: 2px solid var(--blue);
+  border-left-width: 12px;
+  background: var(--app-op-paper);
+}
+
+#app .app-op-mine__body { display: grid; gap: 0.9rem; padding: 1rem; border-top: 1px solid var(--blue); }
+
+#app .app-op-mine--s3 {
+  border-color: var(--ink);
+  border-left-width: 18px;
+}
+
+#app .app-op-mine--su {
+  border-left-style: dashed;
+}
+
+#app .app-op-mine__status {
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+}
+
+#app .app-op-mine__status p {
+  margin: 0;
+}
+
+#app .app-op-mine__more {
+  display: grid;
+  gap: 0.6rem;
+}
+
+/* ---------- Estado vazio ---------- */
+
+#app .app-op-empty {
+  padding: 1.5rem 1rem;
+  border: 3px dashed var(--blue);
+  background: var(--app-op-paper);
+}
+
+#app .app-op-empty p {
+  margin: 0 0 0.6rem;
+  max-width: 60ch;
+}
+
+#app .app-op-empty__title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+#app .app-op-empty__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+/* ---------- Telas maiores ---------- */
+
+@media (min-width: 560px) {
+  #app .app-op-marks {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  #app .app-op-reassess__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  #app .app-op {
+    padding: 2rem 2rem 4rem;
+  }
+
+  #app .app-op-formgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  #app .app-op-card__body {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    grid-template-areas:
+      "main side"
+      "wide wide";
+    column-gap: 1.75rem;
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+
+  #app .app-op-card__summary { grid-template-columns: 3.5rem minmax(0, 1.5fr) minmax(0, 1fr) auto; align-items: center; padding: 1.25rem 1.5rem; gap: 1.25rem; }
+  #app .app-op-card__status,
+  #app .app-op-card__toggle { grid-column: auto; }
+
+  #app .app-op-card__main {
+    grid-area: main;
+  }
+
+  #app .app-op-card__side {
+    grid-area: side;
+  }
+
+  #app .app-op-card__wide {
+    grid-area: wide;
+  }
+
+  #app .app-op-marks {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  #app .app-op-card__extras {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  #app .app-op-mine__body {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-areas:
+      "top status"
+      "more more";
+  }
+
+  #app .app-op-mine__top {
+    grid-area: top;
+  }
+
+  #app .app-op-mine__status {
+    grid-area: status;
+  }
+
+  #app .app-op-mine__more {
+    grid-area: more;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app .app-op *,
+  #app .app-op *::before,
+  #app .app-op *::after {
+    transition: none;
+    animation: none;
+    scroll-behavior: auto;
+  }
+
+  #app .app-op-btn:active:not(:disabled) {
+    transform: none;
+  }
+}
+
+#app .app-op-photo-input input[type="file"] { display:none; }
+#app .app-op-photo-head { display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+#app .app-op-photo-title { font-weight:700; }
+#app .app-op-photo-head .app-op-hint { margin:0; }
+#app .app-op-photo-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; width:100%; }
+#app .app-op-photo-action { display:flex; align-items:center; justify-content:center; gap:6px; width:100%; min-width:0; min-height:44px; padding:0.625rem 0.5rem; font-size:0.875rem; line-height:1.25; }
+#app .app-op-photo-action svg { flex:none; width:20px; height:20px; }
+#app .app-op-photo-action span { min-width:0; white-space:nowrap; }
+@media (max-width:359.98px) { #app .app-op-photo-actions { grid-template-columns:minmax(0,1fr); } }
+#app .app-op-photo-preview { margin:8px 0; }
+#app .app-op-photo-preview img { display:block; max-width:100%; width:240px; max-height:180px; object-fit:contain; border-radius:8px; background:#fff; }
+#app .app-op-photo-preview figcaption,#app .app-op-photo figcaption { font-size:12px; overflow-wrap:anywhere; margin-top:6px; }
+#app .app-op-photo-error { color:#922c21; }
+/* Câmera dentro do app: prévia ao vivo, Cancelar e Tirar foto. */
+#app .app-op-camera { width:min(560px,94vw); border:0; border-radius:12px; background:#fffdf4; color:#171820; box-shadow:0 18px 50px rgb(0 0 0 / 30%); }
+#app .app-op-camera::backdrop { background:rgb(14 18 40 / 72%); }
+#app .app-op-camera-body { display:grid; gap:10px; padding:14px; }
+#app .app-op-camera-body h3 { margin:0; font-size:16px; }
+#app .app-op-camera-frame { overflow:hidden; border-radius:8px; background:#14182c; aspect-ratio:4 / 3; display:flex; align-items:center; justify-content:center; }
+#app .app-op-camera-frame video { width:100%; height:100%; }
+#app .app-op-camera-body [data-camera-status] { margin:0; }
+#app .app-op-camera-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+#app .app-op-camera-actions .app-op-btn { min-height:44px; }
+#app .app-op-photo { margin-top:10px; max-width:100%; }
+#app .app-op-photo summary { display:flex; align-items:center; gap:9px; cursor:pointer; color:var(--app-blue,#233175); font-size:13px; font-weight:700; }
+#app .app-op-photo summary img { width:56px; height:42px; object-fit:cover; border-radius:5px; }
+#app .app-op-photo figure { margin:10px 0 0; }
+#app .app-op-photo figure img { display:block; width:100%; max-height:440px; object-fit:contain; background:#fff; border:1px solid #d8d4bd; border-radius:8px; }

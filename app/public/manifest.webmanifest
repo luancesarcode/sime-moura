@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "SIME — Sistema Integrado de Manutenção e Engenharia",
+  "short_name": "SIME",
+  "description": "Gestão de manutenção: Oficina, histórico, indicadores e Engenharia.",
+  "lang": "pt-BR",
+  "start_url": "/#/oficina",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#eee9cd",
+  "theme_color": "#233175",
+  "icons": [
+    {"src": "/assets/app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/assets/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

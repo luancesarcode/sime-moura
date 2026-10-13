@@ -1,0 +1,10 @@
+{
+  "endpoint": "https://<seu-recurso>.openai.azure.com/",
+  "deployment": "<nome-do-deployment>",
+  "model": "gpt-5-mini",
+  "effort": "medium",
+  "requestsLimit": 40,
+  "tokensLimit": 120000,
+  "maxOutputTokens": 4000,
+  "budgetFile": "data/chat-budget.json"
+}

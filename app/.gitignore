@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.preview/
+*.log
+data/state.json
+data/state.json.tmp
+
+.foundry.local.json
+data/chat-budget.json*

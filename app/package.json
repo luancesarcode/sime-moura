@@ -1,0 +1,25 @@
+{
+  "name": "desafio-moura",
+  "version": "0.2.0",
+  "private": true,
+  "description": "SIME — Sistema Integrado de Manutenção e Engenharia | Desafio Moura",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node --watch scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "chat": "node scripts/serve-foundry.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@azure/identity": "4.13.3",
+    "@azure/storage-blob": "12.34.0",
+    "fast-xml-parser": "5.11.2",
+    "fflate": "0.8.3",
+    "mssql": "12.7.4",
+    "unpdf": "1.8.1"
+  }
+}

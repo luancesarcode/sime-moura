@@ -1,0 +1,22 @@
+node_modules/
+__pycache__/
+*.pyc
+*.tmp
+*.log
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Planilha original fornecida pela Moura (não versionada)
+fontes/
+
+# Saídas locais do pipeline
+pipeline/saida/
+
+# Configuração e estado locais do app
+app/.foundry.local.json
+app/data/state.json
+app/data/state.json.tmp
+app/data/chat-budget.json*

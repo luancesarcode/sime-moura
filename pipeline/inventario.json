@@ -1,0 +1,25 @@
+{
+  "data": "2026-10-09",
+  "fontes": [
+    {
+      "arquivo": "case-selecao-manutencao-inteligente.md",
+      "bytes": 19262,
+      "sha256": "9a54471cd52b3aca59b758472062abe9837fd74b54cb1353103801f41b18721f"
+    },
+    {
+      "arquivo": "Slide_Gestao_Moura_COMPET_ANALISE.md",
+      "bytes": 66493,
+      "sha256": "46c147cc49c7976513c5af9674705fea156826e66a66205a38ccf1a1f1bb7645"
+    },
+    {
+      "arquivo": "RELATORIO_TI_GRUPO_MOURA.md",
+      "bytes": 42232,
+      "sha256": "b7c113b6159b3e2bf27770c58ea0a51ee9f3b6dd9001494323d627867945a5e8"
+    },
+    {
+      "arquivo": "Base de dados Moura - COMPET - Manutencao Inteligente.xlsx",
+      "bytes": 216446,
+      "sha256": "46a03d0aaa8588c3029cc7df271f2b0242c445de8948efa288c68ae9f8944696"
+    }
+  ]
+}

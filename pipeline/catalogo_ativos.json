@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    { "id": "A", "sourceKey": "A", "displayName": "Equipamento A", "assetNature": "real anonymized", "studyFocus": true },
+    { "id": "B", "sourceKey": "B", "displayName": "Equipamento B", "assetNature": "fictitious", "studyFocus": false },
+    { "id": "C", "sourceKey": "C", "displayName": "Equipamento C", "assetNature": "fictitious", "studyFocus": false },
+    { "id": "D", "sourceKey": "D", "displayName": "Equipamento D", "assetNature": "fictitious", "studyFocus": false }
+  ]
+}

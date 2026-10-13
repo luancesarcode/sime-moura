@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#233175">
+    <meta name="description" content="SIME — Sistema Integrado de Manutenção e Engenharia.">
+    <title>SIME | Manutenção e Engenharia</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="apple-touch-icon" href="./assets/app-icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="SIME">
+    <link rel="modulepreload" href="./app/assets.js">
+    <link rel="modulepreload" href="./app/install.js">
+    <link rel="modulepreload" href="./app/read-network.js">
+    <link rel="stylesheet" href="./app.css?v=chat-camera-20261011">
+    <link rel="stylesheet" href="./app/operacao.css?v=perguntas-dirigidas-20261012">
+    <link rel="stylesheet" href="./app/analise.css?v=sp2-evidencias-20261012">
+    <link rel="stylesheet" href="./app/chat.css?v=mobile-keyboard-20261011">
+    <link rel="stylesheet" href="./app-shell.css?v=startup-fast-20261011">
+    <script defer src="./startup.js?v=startup-fast-20261011"></script>
+  <script type="module" src="./app.js?v=sp2-evidencias-20261012"></script>
+  </head>
+  <body>
+    <a class="app-skip-link" href="#principal">Pular para o conteúdo</a>
+
+    <div id="app" class="app-shell">
+      <aside id="app-navigation" class="app-sidebar" aria-label="Navegação da aplicação">
+        <a class="app-brand" href="#/oficina" aria-label="SIME, abrir Oficina">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M5 50h90M27.5 11l45 78M27.5 89l45-78" /></svg>
+          <span>SIME</span>
+        </a>
+        <nav class="app-nav" aria-label="Áreas da aplicação">
+          <a href="#/oficina" data-app-route="oficina"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#oficina"></use></svg><span>Oficina</span></a>
+          <a href="#/historico" data-app-route="historico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#historico"></use></svg><span>Histórico</span></a>
+          <a href="#/relatos" data-app-route="relatos"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#relatos"></use></svg><span>Relatos</span></a>
+          <a href="#/indicadores" data-app-route="indicadores"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#indicadores"></use></svg><span>Indicadores</span></a>
+          <a href="#/engenharia" data-app-route="engenharia"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#engenharia"></use></svg><span>Engenharia</span></a>
+          <a href="#/assistente" data-app-route="assistente"><img class="app-assistant-logo" src="./assets/app-icon-192.png" alt="" width="20" height="20"><span>Assistente</span></a>
+        </nav>
+        <a class="app-about-link" href="#/sobre" data-app-route="sobre"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#sobre"></use></svg><span>Sobre</span></a>
+      </aside>
+
+      <div class="app-workspace">
+        <div id="app-connection" class="app-connection" role="status" hidden></div>
+        <div id="app-message" class="app-message" role="status" aria-live="polite" hidden></div>
+        <main id="principal" class="app-main" tabindex="-1">
+          <div id="app-view" class="app-view" aria-busy="true">
+            <p class="app-loading">Preparando os registros e a oficina…</p>
+            <button id="app-retry-load" class="app-btn" type="button" hidden>Tentar novamente</button>
+          </div>
+        </main>
+      </div>
+
+      <nav id="app-bottom-nav" class="app-bottom-nav" aria-label="Navegação principal">
+        <a href="#/oficina" data-app-route="oficina"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#oficina"></use></svg><span>Oficina</span></a>
+        <a href="#/historico" data-app-route="historico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#historico"></use></svg><span>Histórico</span></a>
+        <a class="app-bottom-assistant" href="#/assistente" data-app-route="assistente"><span class="app-bottom-assistant-mark"><img class="app-assistant-logo" src="./assets/app-icon-192.png" alt="" width="20" height="20"></span><span>Assistente</span></a>
+        <button id="app-more-toggle" type="button" aria-controls="app-more-panel" aria-expanded="false" data-app-group="analises"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#analises"></use></svg><span>Análises</span></button>
+        <a href="#/sobre" data-app-route="sobre"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#sobre"></use></svg><span>Sobre</span></a>
+      </nav>
+      <button id="app-more-backdrop" class="app-more-backdrop" type="button" aria-label="Fechar Análises" hidden></button>
+      <section id="app-more-panel" class="app-more-panel" role="dialog" aria-modal="true" aria-labelledby="app-more-title" hidden>
+        <div class="app-more-panel-heading"><h2 id="app-more-title">Análises</h2><button id="app-more-close" type="button" aria-label="Fechar Análises"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#close"></use></svg></button></div>
+        <nav aria-label="Áreas de análise">
+          <a href="#/relatos" data-app-route="relatos"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#relatos"></use></svg><span>Relatos</span></a>
+          <a href="#/indicadores" data-app-route="indicadores"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#indicadores"></use></svg><span>Indicadores</span></a>
+          <a href="#/engenharia" data-app-route="engenharia"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/app-icons.svg#engenharia"></use></svg><span>Engenharia</span></a>
+        </nav>
+      </section>
+    </div>
+  </body>
+</html>
+

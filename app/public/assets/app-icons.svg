@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="oficina" viewBox="0 0 24 24"><path d="M14.4 6.1a5.2 5.2 0 0 0-6.8 6.3L3.3 16.7a2.1 2.1 0 0 0 3 3l4.3-4.3a5.2 5.2 0 0 0 6.3-6.8l-3.1 3.1-3.1-3.1 3.7-2.5Z"/><path d="m16.2 4.2 3.6 3.6"/></symbol>
+  <symbol id="historico" viewBox="0 0 24 24"><path d="M3.4 11a8.7 8.7 0 1 1 .5 4.2"/><path d="M3.4 5.7V11h5.3M12 7.2v5l3.2 1.8"/></symbol>
+  <symbol id="relatos" viewBox="0 0 24 24"><path d="M6 3.8h8l4 4v12.4H6z"/><path d="M14 3.8v4h4M9 12h6M9 15.5h6"/><path d="M3.5 7v13.2c0 .8.6 1.4 1.4 1.4h10.2"/></symbol>
+  <symbol id="indicadores" viewBox="0 0 24 24"><path d="M4 19.5V11M10 19.5V5M16 19.5v-6M22 19.5H2"/><path d="m3 8 5-4 5 5 7-6"/></symbol>
+  <symbol id="engenharia" viewBox="0 0 24 24"><path d="M3 6v15h15ZM7 14v3h3"/><path d="M15.8 2h2.4l.4 1.2 1.1.6 1.2-.3 1.2 2.1-.9.9v1.2l.9.9-1.2 2.1-1.2-.3-1.1.6-.4 1.2h-2.4l-.4-1.2-1.1-.6-1.2.3-1.2-2.1.9-.9V5.7l-.9-.9 1.2-2.1 1.2.3 1.1-.6Z"/><circle cx="17" cy="6.3" r="1.6"/></symbol>
+  <symbol id="assistente" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5h-6l-4.5 4v-4h-.5A2.5 2.5 0 0 1 4 13.5z"/><path d="M8 9h8M8 12.5h5"/></symbol>
+  <symbol id="sobre" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.7c-1 .9-1.9 1.3-1.9 3M12 17.5v.1"/></symbol>
+  <symbol id="analises" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.2"/></symbol>
+  <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+</svg>
